@@ -21,6 +21,7 @@ app.use(cors(corsOptions))
 
 
 app.get("/api/home", async (req, res) => {
+  console.log("Request made");
   const url = "https://api.coingecko.com/api/v3/exchanges"  
   try {    
     const resp = await axios.get(url);    
