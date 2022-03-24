@@ -1,0 +1,16 @@
+.card-container {
+    margin: auto;
+    width: 70%;
+    border: none;
+    padding: 10px;
+}
+
+.card-image-home {
+    width: 50%;
+    height: 50%;
+}
+
+.card-image-profile {
+    width: 30%;
+    height: 30%;
+}
