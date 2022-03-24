@@ -32,15 +32,7 @@ app.get("/api/home", async (req, res) => {
       
       for (i = 0; i < 10; i++) {
         data = resp.data[i];
-        output.push({
-          "id": data.id,
-          "name": data.name,
-          "country": data.country,
-          "url": data.url,
-          "logo": data.image,
-          "rank": data.rank,
-          "trust": data.trust_rank
-        });
+        output.push(resp.data[i]);
       }  
       return res.json(output)
       
