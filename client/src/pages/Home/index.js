@@ -4,6 +4,9 @@ import {Row, Col} from "react-bootstrap"
 const axios = require("axios")
 
 export const Home = (props) => {  
+    /**
+     * Use
+     */ 
     const [topTenExchange, setTopTenExchange] = useState([])        
     useEffect(()=> {      
       const getTopTenExchanges = async () => {
