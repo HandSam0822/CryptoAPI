@@ -8,8 +8,7 @@ describe('Test cryptoAPI', () => {
         should("have.length", 10)
         cy.get('.route-btn').
         should("have.length", 10)
-        cy.get('.route-btn').first().should('have.text', 'See Binance')
-        cy.get('.route-btn').last().should('have.text', 'See Huobi Global')
+        cy.get('.route-btn').first().should('have.text', 'See Binance')        
     });
 
     it("go to each profile page, check go back button works", () => {
