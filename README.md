@@ -14,13 +14,13 @@ In home page(by default http://localhost:3000), you could see a list with the fi
 
 ### client
 
-- src/components. 
+- src/components          
   Manage all components that is used in page folder
 - src/config  
   Includes frontend configuration such as routing, App.js (client entry point) is also put here
 - src/page  
-  Home is the component that would be render when current url = http://localhost:3000
-  Profile is the component that would be render when current url = http://localhost:3000/profile/{id}
+  when current url = http://localhost:3000, the **Home** component under page would be render 
+  when current url = http://localhost:3000/profile/{id}, the **Profile** component would be render 
 - src/styles  
   Manage all **css** file
 - cypress  
@@ -40,11 +40,15 @@ In home page(by default http://localhost:3000), you could see a list with the fi
 - .env  
   Store the secret key required for backend such as database user:password
 
-Home page screenshot  
-<img src="./screenshot/home.png" alt="drawing" width="250"/>
+### screenshot  
+#### Home page
 
-Profile Page screenshot  
-<img src="./screenshot/profile.png" alt="drawing" width="250"/>
+<img src="./screenshot/home.png" alt="drawing" width="250"/>   
 
-Testing screenshot  
+#### Profile page
+
+<img src="./screenshot/profile.png" alt="drawing" width="250"/> 
+
+#### Testing page
+  
 <img src="./screenshot/test.png" alt="drawing" width="250"/>
