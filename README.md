@@ -40,11 +40,11 @@ In home page(by default http://localhost:3000), you could see a list with the fi
 - .env  
   Store the secret key required for backend such as database user:password
 
-Home page screenshot
+Home page screenshot  
 <img src="./screenshot/home.png" alt="drawing" width="250"/>
 
-Profile Page screenshot
+Profile Page screenshot  
 <img src="./screenshot/profile.png" alt="drawing" width="250"/>
 
-Testing screenshot
+Testing screenshot  
 <img src="./screenshot/test.png" alt="drawing" width="250"/>
