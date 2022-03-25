@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { LOGIN_URL, HOME_URL, PROFILE_URL } from '../config/urls';
+import { HOME_URL, PROFILE_URL } from '../config/urls';
 import { Home } from '../pages/Home';
 import { Profile } from '../pages/Profile';
 
