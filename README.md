@@ -14,7 +14,7 @@ In home page(by default http://localhost:3000), you could see a list with the fi
 
 ### client
 
-- src/components
+- src/components. 
   Manage all components that is used in page folder
 - src/config  
   Includes frontend configuration such as routing, App.js (client entry point) is also put here
