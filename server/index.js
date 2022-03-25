@@ -1,42 +1,32 @@
 const express = require("express");
 const cors = require("cors")
 const axios = require("axios")
-require("dotenv/config")
-
-
-const app = express();
+const corsOptions = require("./config/cors.js");
+const urls = require('./config/urls.js');
+require("dotenv/config");
 const PORT = process.env.PORT || 3001;
-const whitelist = ["http://localhost:3000"]
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-  credentials: true,
-}
-app.use(cors(corsOptions))
+const app = express();
+app.use(cors(corsOptions));
 
 
-app.get("/api/home", async (req, res) => {
-  console.log("Request made");
-  const url = "https://api.coingecko.com/api/v3/exchanges"  
+
+/**
+ * When frontend make get request to BACKEND_URL/api/home
+ * axios send get request to coingecko api to get data 
+ * and forward to client
+ */
+app.get("/api/home", async (req, res) => {    
   try {    
-    const resp = await axios.get(url);    
+    const resp = await axios.get(urls.HOME_API);
+    // if response is successful, filter top ten exchanges data
     if(resp.status === 200) {
-      // const data = resp.data.slice(0, 10);    
-      let data;
       let i;
-      let output = [];
-      
-      for (i = 0; i < 10; i++) {
-        data = resp.data[i];
+      let output = [];    
+      for (i = 0; i < 10; i++) {        
         output.push(resp.data[i]);
       }  
-      return res.json(output)
-      
+      return res.json(output)      
+      // if response status isn't 200, send error status back
     } else {
       res.sendStatus(resp.status);
     }
@@ -45,12 +35,15 @@ app.get("/api/home", async (req, res) => {
   }
 });
 
-
+/**
+ * When frontend make get request to BACKEND_URL/api/profile/:id
+ * axios send get request to coingecko api to get data 
+ * and forward to client
+ */
 app.get("/api/profile/:id", async (req, res) => {
   const id = req.params.id;
-  const url = `https://api.coingecko.com/api/v3/exchanges/${id}`  
-  try {    
-    const resp = await axios.get(url);    
+  try {        
+    const resp = await axios.get(`${urls.PROFILE_API}/${id}`);    
     if(resp.status === 200) {            
       return res.json(resp.data)      
     } else {
@@ -61,7 +54,7 @@ app.get("/api/profile/:id", async (req, res) => {
   }
 });
 
-
+// set app listen to port(default: http://localhost:3001)
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
